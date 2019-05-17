@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Title } from './components/Title';
+import { Board } from './components/Board';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={styles.mainAppContainer} >
+      <Title text={'goodbye world :('} />
+      <Board />
     </div>
   );
+}
+
+const styles = {
+  mainAppContainer: {
+    'display': 'flex',
+    'min-height': '100vh',
+    'flex-direction': 'column',
+    'justify-content': 'center',
+    'align-items': 'center',
+    'background-color': '#000',
+  },
+  textStyle: {
+    'font-size': '36px',
+    'color': '#fff',
+  }
 }
 
 export default App;
