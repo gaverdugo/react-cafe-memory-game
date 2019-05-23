@@ -1,18 +1,11 @@
 import React, { Component } from "react";
 import { Card } from "./Card";
+import cardObjects from "../helpers/cardObjects";
 
 class Board extends Component {
   render() {
-    const mockIcons = [
-      "fas fa-band-aid",
-      "fas fa-cat",
-      "fas fa-dragon",
-      "far fa-clock",
-      "fas fa-clock"
-    ];
-
-    const iconsComponents = mockIcons.map(iconName => (
-      <Card iconName={iconName} />
+    const iconsComponents = cardObjects.map(object => (
+      <Card iconName={object.iconName} classes={object.classes} />
     ));
 
     return (

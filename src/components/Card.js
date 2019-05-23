@@ -11,7 +11,7 @@ class Card extends Component {
 
   render() {
     const actualIconName = this.state.flipped
-      ? this.props.iconName
+      ? this.props.classes
       : "fas fa-question";
 
     return (
