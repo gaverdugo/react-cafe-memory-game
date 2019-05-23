@@ -1,19 +1,35 @@
 import React, { Component } from "react";
 import { Card } from "./Card";
 import cardObjects from "../helpers/cardObjects";
+import shuffle from "../helpers/shuffle";
 
 class Board extends Component {
+  state = {
+    boardElements: []
+  };
+
+  _shuffleCards = () => {
+    // spread the card objects array twice into a containing array
+    const boardElements = [...cardObjects, ...cardObjects];
+    // shuffle the array
+    shuffle(boardElements);
+    // put the shuffled array in state
+    this.setState({
+      boardElements
+    });
+  };
+
+  componentDidMount() {
+    // shuffle the cards on mount
+    this._shuffleCards();
+  }
+
   render() {
-    const iconsComponents = cardObjects.map(object => (
-      <Card iconName={object.iconName} classes={object.classes} />
+    const iconsComponents = this.state.boardElements.map((object, index) => (
+      <Card key={index} iconName={object.iconName} classes={object.classes} />
     ));
 
-    return (
-      <div style={styles.boardContainer}>
-        {iconsComponents}
-        {iconsComponents}
-      </div>
-    );
+    return <div style={styles.boardContainer}>{iconsComponents}</div>;
   }
 }
 
