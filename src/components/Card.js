@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Card extends Component {
   state = {
-    flipped: false,
-  }
+    flipped: false
+  };
 
   _flipCard() {
-    this.setState((prevState) => ({ flipped: !prevState.flipped }));
+    this.setState(prevState => ({ flipped: !prevState.flipped }));
   }
 
   render() {
-    const actualIconName =
-      this.state.flipped ? this.props.iconName : 'fas fa-question';
+    const actualIconName = this.state.flipped
+      ? this.props.iconName
+      : "fas fa-question";
 
     return (
-      <div
-        style={styles.cardContainer}
-        onClick={this._flipCard.bind(this)}
-      >
+      <div style={styles.cardContainer} onClick={this._flipCard.bind(this)}>
         <i style={styles.iconStyle} className={actualIconName} />
       </div>
     );
@@ -26,20 +24,18 @@ class Card extends Component {
 
 const styles = {
   iconStyle: {
-    'font-size': '36px',
-    'color': '#fff',
+    "font-size": "36px",
+    color: "#fff"
   },
   cardContainer: {
-    'max-height': '40px',
-    'margin': '8px',
-    'min-width': '70px',
-    'display': 'flex',
-    'justify-content': 'center',
-    'align-items': 'center',
-    'border-color': '#fff',
-    'border-width': '2px',
-    'border-style': 'solid',
+    height: "calc(50% - 20px)",
+    width: "calc(20% - 20px)",
+    display: "flex",
+    "justify-content": "center",
+    "align-items": "center",
+    "background-color": "var(--card-color)",
+    "border-radius": "var(--subtle-border-radius)"
   }
-}
+};
 
 export { Card };
