@@ -31,10 +31,10 @@ const styles = {
     height: "calc(50% - 20px)",
     width: "calc(20% - 20px)",
     display: "flex",
-    "justify-content": "center",
-    "align-items": "center",
-    "background-color": "var(--card-color)",
-    "border-radius": "var(--subtle-border-radius)"
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "var(--card-color)",
+    borderRadius: "var(--subtle-border-radius)"
   }
 };
 

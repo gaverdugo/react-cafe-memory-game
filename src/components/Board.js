@@ -38,11 +38,11 @@ const styles = {
     height: "380px",
     width: "var(--board-width)",
     display: "flex",
-    "justify-content": "space-around",
-    "align-content": "space-around",
-    "flex-wrap": "wrap",
-    "background-color": "var(--board-color)",
-    "border-radius": "var(--subtle-border-radius)"
+    justifyContent: "space-around",
+    alignContent: "space-around",
+    flexWrap: "wrap",
+    backgroundColot: "var(--board-color)",
+    borderRadius: "var(--subtle-border-radius)"
   },
   iconStyle: {
     "font-size": "36px",

@@ -15,11 +15,11 @@ function App() {
 const styles = {
   mainAppContainer: {
     display: "flex",
-    "min-height": "100vh",
-    "flex-direction": "column",
-    "justify-content": "center",
-    "align-items": "center",
-    "background-color": "var(--background-color)"
+    minHeight: "100vh",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "var(--background-color)"
   },
   textStyle: {
     "font-size": "36px",
