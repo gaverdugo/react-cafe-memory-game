@@ -5,7 +5,9 @@ import shuffle from "../helpers/shuffle";
 
 class Board extends Component {
   state = {
-    boardElements: []
+    boardElements: [],
+    selected: [],
+    matched: []
   };
 
   _shuffleCards = () => {
@@ -19,14 +21,45 @@ class Board extends Component {
     });
   };
 
+  _handleCardClick = index => {
+    const { boardElements, selected, matched } = this.state;
+    if (selected.length === 0) {
+      this.setState({
+        selected: [index]
+      });
+    } else if (selected.length === 1) {
+      const isAMatch =
+        boardElements[selected[0]].iconName === boardElements[index].iconName;
+      if (isAMatch) {
+        this.setState({
+          matched: [...matched, selected[0], index],
+          selected: []
+        });
+      } else {
+        this.setState({ selected: [selected[0], index] });
+        setTimeout(() => {
+          this.setState({ selected: [] });
+        }, 500);
+      }
+    }
+  };
+
   componentDidMount() {
     // shuffle the cards on mount
     this._shuffleCards();
   }
 
   render() {
-    const iconsComponents = this.state.boardElements.map((object, index) => (
-      <Card key={index} iconName={object.iconName} classes={object.classes} />
+    const { boardElements, selected, matched } = this.state;
+    const iconsComponents = boardElements.map((object, index) => (
+      <Card
+        key={index}
+        iconName={object.iconName}
+        classes={object.classes}
+        onSelect={() => this._handleCardClick(index)}
+        isSelected={selected.includes(index)}
+        isMatched={matched.includes(index)}
+      />
     ));
 
     return <div style={styles.boardContainer}>{iconsComponents}</div>;

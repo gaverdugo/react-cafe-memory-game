@@ -6,7 +6,6 @@ import "./App.css";
 function App() {
   return (
     <div style={styles.mainAppContainer}>
-      <Title text={"goodbye world :("} />
       <Board />
     </div>
   );

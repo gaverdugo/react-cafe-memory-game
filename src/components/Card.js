@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 
 class Card extends Component {
-  state = {
-    flipped: false
-  };
-
-  _flipCard() {
-    this.setState(prevState => ({ flipped: !prevState.flipped }));
-  }
-
   render() {
-    const actualIconName = this.state.flipped
-      ? this.props.classes
-      : "fas fa-question";
+    const { isSelected, isMatched, onSelect } = this.props;
+    const actualIconName =
+      isSelected || isMatched ? this.props.classes : "fas fa-question";
 
     return (
-      <div style={styles.cardContainer} onClick={this._flipCard.bind(this)}>
+      <div
+        style={styles.cardContainer}
+        onClick={() => {
+          if (!isSelected && !isMatched) {
+            onSelect();
+          }
+        }}
+      >
         <i style={styles.iconStyle} className={actualIconName} />
       </div>
     );
