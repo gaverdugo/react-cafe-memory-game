@@ -70,16 +70,10 @@ const styles = {
   boardContainer: {
     height: "380px",
     width: "var(--board-width)",
-    display: "flex",
-    justifyContent: "space-around",
-    alignContent: "space-around",
-    flexWrap: "wrap",
-    backgroundColot: "var(--board-color)",
+    display: "grid",
+    gridTemplateColumns: "repeat(5, 1fr)",
+    backgroundColor: "var(--board-color)",
     borderRadius: "var(--subtle-border-radius)"
-  },
-  iconStyle: {
-    "font-size": "36px",
-    color: "#fff"
   }
 };
 

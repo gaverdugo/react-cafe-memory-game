@@ -27,11 +27,10 @@ const styles = {
     color: "#fff"
   },
   cardContainer: {
-    height: "calc(50% - 20px)",
-    width: "calc(20% - 20px)",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    margin: "10px",
     backgroundColor: "var(--card-color)",
     borderRadius: "var(--subtle-border-radius)"
   }
