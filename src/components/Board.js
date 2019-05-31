@@ -92,7 +92,14 @@ class Board extends Component {
       />
     ));
 
-    return <div style={styles.boardContainer}>{iconsComponents}</div>;
+    return (
+      <>
+        <div style={styles.boardContainer}>{iconsComponents}</div>
+        <button onClick={this._resetGame} style={styles.resetButton}>
+          Reset Game
+        </button>
+      </>
+    );
   }
 }
 
@@ -104,6 +111,18 @@ const styles = {
     gridTemplateColumns: "repeat(5, 1fr)",
     backgroundColor: "var(--board-color)",
     borderRadius: "var(--subtle-border-radius)"
+  },
+  resetButton: {
+    display: "inline-block",
+    border: "none",
+    padding: "1rem 2rem",
+    margin: "1rem auto",
+    textDecoration: "none",
+    color: "#fff",
+    fontSize: "1.5rem",
+    cursor: "pointer",
+    textAlign: "center",
+    backgroundColor: "var(--board-color)"
   }
 };
 
