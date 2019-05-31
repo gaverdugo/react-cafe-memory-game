@@ -4,6 +4,8 @@
   --board-color: #303030;
   --card-color: #424242;
   --subtle-border-radius: 2px;
+  --duration: 0.5s;
+  --ease: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 body {
