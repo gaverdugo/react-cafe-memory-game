@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-cafe-memory-game/static/css/main.5e471a17.chunk.css",
+    "main.js": "/react-cafe-memory-game/static/js/main.a042024a.chunk.js",
+    "main.js.map": "/react-cafe-memory-game/static/js/main.a042024a.chunk.js.map",
+    "runtime~main.js": "/react-cafe-memory-game/static/js/runtime~main.98c1a7e1.js",
+    "runtime~main.js.map": "/react-cafe-memory-game/static/js/runtime~main.98c1a7e1.js.map",
+    "static/js/2.8515f2cd.chunk.js": "/react-cafe-memory-game/static/js/2.8515f2cd.chunk.js",
+    "static/js/2.8515f2cd.chunk.js.map": "/react-cafe-memory-game/static/js/2.8515f2cd.chunk.js.map",
+    "index.html": "/react-cafe-memory-game/index.html",
+    "precache-manifest.330b37f53d72e1bd9f4592fca05392c7.js": "/react-cafe-memory-game/precache-manifest.330b37f53d72e1bd9f4592fca05392c7.js",
+    "service-worker.js": "/react-cafe-memory-game/service-worker.js",
+    "static/css/main.5e471a17.chunk.css.map": "/react-cafe-memory-game/static/css/main.5e471a17.chunk.css.map"
+  }
+}
