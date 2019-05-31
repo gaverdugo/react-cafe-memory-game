@@ -7,7 +7,8 @@ class Board extends Component {
   state = {
     boardElements: [],
     selected: [],
-    matched: []
+    matched: [],
+    remaining: 5
   };
 
   _shuffleCards = () => {
@@ -21,6 +22,16 @@ class Board extends Component {
     });
   };
 
+  _resetGame = () => {
+    this.setState({
+      selected: [],
+      matched: [],
+      remaining: 5
+    });
+    this._shuffleCards();
+    this.props.changeGameEmotion("🙂");
+  };
+
   _handleCardClick = index => {
     const { boardElements, selected, matched } = this.state;
     if (selected.length === 0) {
@@ -31,15 +42,33 @@ class Board extends Component {
       const isAMatch =
         boardElements[selected[0]].iconName === boardElements[index].iconName;
       if (isAMatch) {
-        this.setState({
-          matched: [...matched, selected[0], index],
-          selected: []
-        });
+        this.setState(
+          {
+            matched: [...matched, selected[0], index],
+            selected: [],
+            remaining: this.state.remaining - 1
+          },
+          function() {
+            if (this.state.remaining === 0) {
+              this.props.changeGameEmotion("🎉");
+              setTimeout(() => {
+                this._resetGame();
+              }, 2000);
+            } else {
+              this.props.changeGameEmotion("😃");
+              setTimeout(() => {
+                this.props.changeGameEmotion("🙂");
+              }, 1000);
+            }
+          }
+        );
       } else {
         this.setState({ selected: [selected[0], index] });
+        this.props.changeGameEmotion("😕");
         setTimeout(() => {
           this.setState({ selected: [] });
-        }, 500);
+          this.props.changeGameEmotion("🙂");
+        }, 1000);
       }
     }
   };
@@ -47,6 +76,7 @@ class Board extends Component {
   componentDidMount() {
     // shuffle the cards on mount
     this._shuffleCards();
+    this.props.changeGameEmotion("🙂");
   }
 
   render() {

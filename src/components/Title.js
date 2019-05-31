@@ -8,7 +8,7 @@ class Title extends Component {
 
 const styles = {
   textStyle: {
-    fontSize: "36px",
+    fontSize: "48px",
     color: "#fff"
   }
 };
