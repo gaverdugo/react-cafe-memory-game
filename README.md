@@ -1,19 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Cafe no. 0
 
-## Available Scripts
+Pequeño Proyecto para el meetup de React Cafe. Consiste en un juego de memoria hecho en React.js
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-Make sure you run
-
-### `yarn`
-
-to install dependencies
+[Demo 🔗](https://gaverdugo.github.io/react-cafe-memory-game/ "Demo")
